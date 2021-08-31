@@ -1,0 +1,229 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+@font-face {
+  font-family: "Shopper";
+  src: url("http://www.shopperfont.com/font/Shopper-Std.ttf");
+}
+
+.mycart .shopper {
+  text-transform: lowercase;
+  font: 2em "Shopper", sans-serif;
+  line-height: 0.5em;
+  display: inline-block;
+}
+
+.mycart h1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+.mycart p {
+  font-size: 0.9em;
+  color: #8a8a8a;
+}
+
+.mycart input {
+  padding: 0.5em 0.3em;
+  font-size: 1.4em;
+  color: #8a8a8a;
+  text-align: center;
+}
+
+.mycart img {
+  max-width: 9em;
+  width: 100%;
+  overflow: hidden;
+  margin-right: 1em;
+}
+
+.mycart a {
+  text-decoration: none;
+}
+
+.mycart .container {
+  max-width: 75em;
+  width: 95%;
+  margin: 40px auto;
+  overflow: hidden;
+  position: relative;
+
+  border-radius: 0.6em;
+  box-shadow: 0 0.5em 0 rgba(138, 148, 152, 0.2);
+}
+
+.mycart .heading {
+  padding: 1em;
+  position: relative;
+  z-index: 1;
+  color: #f7f7f7;
+  background: #f34d35;
+}
+
+.mycart .cart {
+  margin: 2.5em;
+  overflow: hidden;
+}
+
+.mycart .cart.is-closed {
+  height: 0;
+  margin-top: -2.5em;
+}
+
+.mycart .table {
+  background: #ffffff;
+  border-radius: 0.6em;
+  overflow: hidden;
+  clear: both;
+  margin-bottom: 1.8em;
+}
+
+.mycart .layout-inline > * {
+  display: inline-block;
+}
+
+.mycart .align-center {
+  text-align: center;
+}
+
+.mycart .th {
+  background: #f34d35;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.mycart .tf {
+  background: #f34d35;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 1.2em;
+}
+
+.mycart .tf p {
+  color: #fff;
+  font-weight: bold;
+}
+
+.mycart .col {
+  padding: 1em;
+  width: 12%;
+}
+
+.mycart .col-pro {
+  padding-left: 25px;
+  width: 44%;
+}
+
+.mycart .col-pro > * {
+  vertical-align: middle;
+}
+
+.mycart .col-qty {
+  text-align: center;
+  width: 17%;
+}
+
+.mycart .col-numeric p {
+  font: bold 0.9em helvetica;
+}
+
+.mycart .col-total p {
+  color: #12c8b1;
+}
+
+.mycart .tf .col {
+  width: 20%;
+}
+
+.mycart .row > div {
+  vertical-align: middle;
+}
+
+.mycart .row-bg2 {
+  background: #f7f7f7;
+}
+
+.mycart .visibility-cart {
+  position: absolute;
+  color: #fff;
+  top: 0.5em;
+  right: 0.5em;
+  font: bold 2em arial;
+  border: 0.16em solid #fff;
+  border-radius: 2.5em;
+  padding: 0 0.22em 0 0.25em;
+}
+
+.mycart .col-qty > * {
+  vertical-align: middle;
+}
+
+.mycart .col-qty > input {
+  max-width: 2.6em;
+}
+
+.mycart a.qty {
+  width: 1em;
+  line-height: 1em;
+  border-radius: 2em;
+  font-size: 1.3em;
+  font-weight: bold;
+  text-align: center;
+  background: #43ace3;
+  color: #fff;
+}
+
+.mycart a.qty:hover {
+  background: #3b9ac6;
+}
+
+.mycart .btn {
+  padding: 10px 30px;
+  border-radius: 0.3em;
+  font-size: 1.4em;
+  font-weight: bold;
+  background: #43ace3;
+  color: #fff;
+  box-shadow: 0 3px 0 rgba(59, 154, 198, 1);
+}
+
+.mycart .btn:hover {
+  box-shadow: 0 3px 0 rgba(59, 154, 198, 0);
+}
+
+.mycart .btn-update {
+  float: right;
+  margin: 0 0 1.5em 0;
+}
+
+.mycart .transition {
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 755px) {
+  .mycart .container {
+    width: 98%;
+  }
+
+  .mycart .col-pro {
+    width: 35%;
+  }
+
+  .mycart .col-qty {
+    width: 22%;
+  }
+
+  img {
+    max-width: 100%;
+    margin-bottom: 1em;
+  }
+}
+
+@media screen and (max-width: 591px) {
+}

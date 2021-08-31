@@ -1,0 +1,18 @@
+{% load static %}
+
+<!-- Cart -->
+<li class="header-cart dropdown default-dropdown">
+  <a href="/ordersummary">
+    <div class="header-btns-icon">
+      <i class="fa fa-shopping-cart"></i>
+      {% if request.user.is_authenticated %}
+      <span class="qty">
+        {% if orders %} {{orders.get_total_item_quantity}} {% else %} 0
+        {%endif%}
+      </span>
+      {% endif %}
+    </div>
+  </a>
+</li>
+
+<!-- /Cart -->

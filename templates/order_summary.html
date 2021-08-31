@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="mycart">
+  <div class="container">
+    {% if orders %}
+    <div class="cart transition is-open">
+      <div class="table">
+        <div class="layout-inline row th">
+          <div class="col col-pro">محصول</div>
+          <div class="col col-price align-center">قیمت به تومان</div>
+          <div class="col col-qty align-center">تعداد</div>
+          <div class="col">جمع مبلغ</div>
+        </div>
+
+        {% for item in orders.items.all %}
+        <div class="layout-inline row">
+          <div class="col col-pro layout-inline">
+            <img src="/media/{{item.item.image}}" style="max-width: 70px" />
+            <p>{{item.item.title}}</p>
+          </div>
+
+          <div class="col col-price col-numeric align-center">
+            {% if item.item.discount_price %}
+            <p>{{item.item.discount_price}}</p>
+            {% else %}
+            <p>{{item.item.price}}</p>
+            {% endif %}
+          </div>
+
+          <div class="col col-qty layout-inline">
+            <a
+              href="/remove_single_from_cart/{{item.item.slug}}"
+              class="qty qty-minus"
+            >
+              -
+            </a>
+            <input type="numeric" value="{{item.quantity}}" />
+            <a href="/add_to_cart/{{item.item.slug}}" class="qty qty-plus">+</a>
+          </div>
+
+          <div class="col col-total col-numeric">
+            <p>{{item.get_total_price}}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <b>جمع کل : {{orders.get_total_price}} تومان</b>
+    </div>
+    {% else %}
+    <div class="text-center">سفارش فعالی موجود نیست .</div>
+    {% endif %}
+  </div>
+</div>
+<div class="text-center" style="margin-bottom: 5px">
+  <a href="#" class="btn btn-success">checkout</a>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,160 @@
+{% load static %}{% load shoptags %}
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>قالب فروشگاهی مدشاپ</title>
+
+    <!-- Google font -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css?family=Hind:400,700"
+      rel="stylesheet"
+    /> -->
+
+    <!-- Bootstrap -->
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{% static 'css/bootstrap.min.css' %}"
+    />
+
+    <!-- Slick -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{% static 'css/slick.css' %}"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{% static 'css/slick-theme.css' %}"
+    />
+
+    <!-- nouislider -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{% static 'css/nouislider.min.css' %}"
+    />
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+
+    <!-- Custom stlylesheet -->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{% static 'css/style.css' %}"
+    />
+    <!-- cart style sheet -->
+    <link type="text/css" rel="stylesheet" href="{% static 'css/cart.css' %}" />
+  </head>
+
+  <body>
+    <hr />
+    <div class="demo"></div>
+    <hr />
+    <!-- HEADER -->
+    <header>
+      <!-- top Header -->
+      <div id="top-header">
+        <div class="container">
+          <div class="pull-left">
+            <span>شماره تماس: 0123456789</span>
+          </div>
+          <div class="pull-right">
+            <ul class="header-top-links">
+              <li><a href="/">فروشگاه</a></li>
+              <li><a href="#">خبرنامه</a></li>
+              <li><a href="#">سؤالات متداول</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- /top Header -->
+
+      <!-- header -->
+      <div id="header">
+        <div class="container">
+          <div class="pull-OneBox">
+            <!-- Logo -->
+            <div class="header-logo">
+              <a class="logo" href="/">
+                <img src="{% static 'img/logo.png' %}" alt="" />
+              </a>
+            </div>
+            <!-- /Logo -->
+
+            <!-- Search -->
+            {%search%}
+            <!-- /Search -->
+          </div>
+          <div class="pull-TowBox">
+            <ul class="header-btns">
+              <!-- Account -->
+              <li class="header-account dropdown default-dropdown">
+                <div
+                  class="dropdown-toggle"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-expanded="true"
+                >
+                  <div class="header-btns-icon">
+                    <i class="fa fa-user-o"></i>
+                  </div>
+                  <strong class="text-uppercase"
+                    >حساب کاربری <i class="fa fa-caret-down"></i
+                  ></strong>
+                </div>
+                {%login%}
+                <!-- <ul class="custom-menu">
+                  <li>
+                    <a href="#"><i class="fa fa-user-o"></i> حساب کاربری</a>
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><i class="fa fa-heart-o"></i> علاقه مندی های من</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-exchange"></i> مقایسه</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-check"></i> تسویه حساب</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-unlock-alt"></i> ورود</a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-user-plus"></i> ثبت نام</a>
+                  </li>
+                </ul> -->
+              </li>
+              <!-- /Account -->
+              {%cart %}
+
+              <!-- Mobile nav toggle-->
+              <li class="nav-toggle">
+                <button class="nav-toggle-btn main-btn icon-btn">
+                  <i class="fa fa-bars"></i>
+                </button>
+              </li>
+              <!-- / Mobile nav toggle -->
+            </ul>
+          </div>
+        </div>
+        <!-- header -->
+      </div>
+      <!-- container -->
+    </header>
+    <!-- /HEADER -->
+    <!-- Main content -->
+    {% block content %} {% endblock content %}
+    <!-- Main content -->
+    {% include "inc/footer.html" %}
+  </body>
+</html>

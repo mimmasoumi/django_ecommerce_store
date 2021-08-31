@@ -1,0 +1,13 @@
+<div class="header-search">
+  <form method="GET" action="/search">
+    <input name="q" class="input search-input" type="text" placeholder="جستجو" />
+    <select name="category" class="input search-categories">
+      <option value="0">همه دسته ها</option>
+      {% for category in categories %}
+      {%for subcategory in category.subcategory.all%}
+      <option value="{{subcategory.id}}">{{subcategory.title}}</option>
+      {%endfor%} {%endfor%}
+    </select>
+    <button class="search-btn"><i class="fa fa-search"></i></button>
+  </form>
+</div>
